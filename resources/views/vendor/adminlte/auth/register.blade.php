@@ -36,7 +36,7 @@
         {{-- Email field --}}
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                   value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}">
+                   value="{{ old('email') }}" placeholder="Correo electrónico">
             <div class="input-group-append">
                 <div class="input-group-text">
                     <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
@@ -59,6 +59,9 @@
                     <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
                 </div>
             </div>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                La constraseña debe tener de 8-20  caracteres de largao.
+              </small>
             @if($errors->has('password'))
                 <div class="invalid-feedback">
                     <strong>{{ $errors->first('password') }}</strong>
