@@ -25,7 +25,7 @@ $ composer install
 ## Funciones actuales 
 
 
-## Preview
+## Vista previa
 
 <img src="screenshots/users-list.png" style=" width:350px ; height:150px " /> <img src="screenshots/groups-list.png" style=" width:350px ; height:150px " /> 
 
