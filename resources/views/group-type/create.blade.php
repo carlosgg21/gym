@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <label for="InputDescripcion">Descripción </label>
                             <textarea class="form-control" id="InputDescripcion" name="description" style="resize: none" rows="2"></textarea>
-                            {!! $errors->first('type','<span class="text-danger errorMessage">:message</span>') !!}
+                            {!! $errors->first('description','<span class="text-danger errorMessage">:message</span>') !!}
 
 
                         </div>
