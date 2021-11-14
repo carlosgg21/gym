@@ -1,0 +1,57 @@
+.requiredField {
+    color: red;
+}
+
+.btn-orange {
+    color: #fff;
+    background-color: #EF6001;
+    border-color: #EF6001;
+}
+
+.btn-default {
+    color: #fff;
+    background-color: #33393F;
+    border-color: #33393F;
+}
+
+.btn-orange:hover {
+    color: #fff;
+    background-color: #FD7E14;
+    border-color: #FD7E14;
+}
+
+.link-orange {
+    color: #EF6001;
+}
+
+.link-orange:hover {
+    color: #FD7E14;
+}
+
+.table .thead-orange th {
+    color: #fff;
+    background-color: #FD7E14;
+    border-color: #FD7E14;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #EF6001;
+    border-color: #EF6001;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #EF6001;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.inputCheckbox:hover {
+    cursor: pointer;
+}
