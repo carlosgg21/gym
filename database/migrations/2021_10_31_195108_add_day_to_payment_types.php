@@ -14,7 +14,7 @@ class AddDayToPaymentTypes extends Migration
     public function up()
     {
         Schema::table('payment_types', function (Blueprint $table) {
-            $table->integer('day');
+            $table->integer('day')->default(0);
         });
     }
 
