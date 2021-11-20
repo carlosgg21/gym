@@ -285,6 +285,31 @@ return [
         //     'url'  => 'admin/settings',
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
+
+        [
+            'text'    => 'Clasificadores',
+            'icon'    => 'fas fa-fw fa-tools',
+            'topnav' => true,
+            'submenu' => [
+
+                [
+                    'text' => 'Clientes de baja',
+                    'route'  => 'employees.index',
+                    'icon' => 'fa fa-user-minus',
+                ],
+                // [
+                //     'text' => 'Tipos Contratos',
+                //     'route'  => 'employees.index',
+                // ],
+                // [
+                //     'text' => 'Provincias',
+                //     'route'  => 'employees.index',
+                // ],
+
+
+
+            ],
+        ],
         ['header' => 'DEL NEGOCIO'],
 
         [
@@ -304,6 +329,14 @@ return [
             'icon' => 'fa fa-user-tie',
             // 'icon' => 'fas fa-fw fa-users',
         ],
+        // ['header' => 'REPORTES'],
+
+        // [
+        //     'text' => 'Cliente de baja',
+        //     'route'  => 'employees.index',
+        //     'icon' => 'fa fa-user-minus',
+        //     // 'icon' => 'fa fa-bookmark',
+        // ],
 
 
 
