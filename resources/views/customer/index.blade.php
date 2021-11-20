@@ -39,8 +39,8 @@
                     <a href="{{ route('customers.create') }}"  class="btn btn-default btn-sm"  aria-disabled="true"><i class="fa fa-plus-square" ></i> Nuevo</a>
                     <a id="btnRemove" href="#" class="btn btn-danger btn-sm " aria-disabled="true"><i
                             class="fa fa-trash-alt"></i> Dar baja </a>
-                    <a id="btnPayment" href="#" class="btn btn-primary btn-sm " aria-disabled="true"><i
-                            class="fa fa-credit-card"></i> Registrar pago</a>
+                    {{-- <a id="btnPayment" href="#" class="btn btn-primary btn-sm " aria-disabled="true"><i
+                            class="fa fa-credit-card"></i> Registrar pago</a> --}}
                     <a id="btnMember" href="#" class="btn btn-success btn-sm " aria-disabled="true"><i
                             class="fa fa-id-card-alt"></i> Hacer socio</a>
                 </div>

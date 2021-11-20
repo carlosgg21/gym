@@ -250,34 +250,22 @@
                         <span>Contacténos</span>
                         <h2>Pongase en contacnto</h2>
                     </div>
-                    <div class="contact-widget">
-                        <div class="cw-text">
-                            <i class="fa fa-link"></i>
-                            <p> <a style="color: white"target="_blank" href="https://www.novum.nat.cu/">https://www.novum.nat.cu/</a></p>
-                        </div>
-                        <div class="cw-text">
-                            <i class="fa fa-mobile"></i>
-                            <ul>
-                                <li>+53 52774834</li>
 
-                            </ul>
-                        </div>
-                        <div class="cw-text email">
-                            <i class="fa fa-envelope"></i>
-                            <p>novum.cu@gmail.com</p>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="leave-comment">
-                        <form action="#">
-                            <input type="text" placeholder="Nombre">
-                            <input type="text" placeholder="Correo electrónico">
-                            {{-- <input type="text" placeholder="Website"> --}}
-                            <textarea placeholder="Cómo podemos ayudarlo"></textarea>
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                   <span style="color: white" ><i  class="fa fa-link"> </i> SITIO WEB </span>
+                    <p>    <a style="color: white"target="_blank" href="https://www.novum.nat.cu/">https://www.novum.nat.cu/</a></p>
+                </div>
+                <div class="col">
+                    <span style="color: white" ><i  class="fa fa-whatsapp"> </i> WHATSAPP </span>
+                    <p>    <a style="color: white" target="_blank" title="Envíanos un mensaje de WhatsApp" href="https://api.whatsapp.com/send?phone=5352774834&text=Hola, Nececito mas informacion!"> +53 52774834</a></a>
+
+                </div>
+                <div class="col">
+                    <span style="color: white" ><i  class="fa fa-envelope"> </i> CORREO ELECTRÓNICO </span>
+                    <p>    <a style="color: white"target="_blank" href="mailto:novum.cu@gmail.com">novum.cu@gmail.com</a></p>
                 </div>
             </div>
 
@@ -286,7 +274,7 @@
     <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
-    <section class="footer-section">
+    <section style="margin-top: -6%" class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
