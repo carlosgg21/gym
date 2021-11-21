@@ -44,10 +44,10 @@
                             {!! $errors->first('name','<span class="text-danger errorMessage">:message</span>') !!}
                         </div>
                         <div class="form-group">
-                            <label for="InputDay">Cantidad  dias <span class="requiredField">* </span></label>
-                            <input type="number" min="1" max="365" class="form-control form-control-sm" id="InputDay"  name="day" value="{{ old('day') }}"  placeholder="Cantidad de dias" required>
+                            <label for="InputDay">Cantidad  días <span class="requiredField">* </span></label>
+                            <input type="number" min="1" max="365" class="form-control form-control-sm" id="InputDay"  name="day" value="{{ old('day') }}"  placeholder="Cantidad de días" required>
                             {!! $errors->first('day','<span class="text-danger errorMessage">:message</span>') !!}
-                            <small id="typeeHelp" class="form-text text-muted">Cantidad de dias que representa el tipo de pago. </small>
+                            <small id="typeeHelp" class="form-text text-muted">Cantidad de días que representa el tipo de pago. </small>
                         </div>
                         <div class="form-group">
                             <label for="InputMount">Monto a pagar <span class="requiredField">* </span></label>
