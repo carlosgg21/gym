@@ -31,22 +31,27 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('businesses', BusinessController::class);
-Route::resource('types', EmployeeTypeController::class);
-Route::resource('owners', OwnerController::class);
-Route::resource('employees', EmployeeController::class);
-Route::resource('payment-types', PaymentTypesController::class);
-Route::get('customers/member', [CustomerController::class,'member'])->name('customers.member');
-Route::get('customers/unsubscribe', [CustomerController::class,'unsubscribe'])->name('customers.unsubscribe');
-Route::get('customers/show_unsubscribe', [CustomerController::class,'show_unsubscribe'])->name('customers.show_unsubscribe');
-Route::get('customers/subscribe', [CustomerController::class,'subscribe'])->name('customers.subscribe');
-Route::resource('customers', CustomerController::class);
-Route::get('towns/{id}', [TownshipController::class, 'getTownByProvince']);
-Route::get('mount/{id}', [PaymentTypesController::class, 'getMount'])->name('payment-types.mount');
-Route::resource('group-types', GroupTypeController::class);
-Route::resource('groups', GroupController::class);
-Route::resource('group-customers', CustomerGroup::class);
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('businesses', BusinessController::class);
+    Route::resource('types', EmployeeTypeController::class);
+    Route::resource('owners', OwnerController::class);
+    Route::resource('employees', EmployeeController::class);
+    Route::resource('payment-types', PaymentTypesController::class);
+    Route::get('customers/member', [CustomerController::class, 'member'])->name('customers.member');
+    Route::get('customers/unsubscribe', [CustomerController::class, 'unsubscribe'])->name('customers.unsubscribe');
+    Route::get('customers/show_unsubscribe', [CustomerController::class, 'show_unsubscribe'])->name('customers.show_unsubscribe');
+    Route::get('customers/subscribe', [CustomerController::class, 'subscribe'])->name('customers.subscribe');
+    Route::resource('customers', CustomerController::class);
+    Route::get('towns/{id}', [TownshipController::class, 'getTownByProvince']);
+    Route::get('mount/{id}', [PaymentTypesController::class, 'getMount'])->name('payment-types.mount');
+    Route::resource('group-types', GroupTypeController::class);
+    Route::resource('groups', GroupController::class);
+    Route::resource('group-customers', CustomerGroup::class);
+});
+
 
 // Auth::routes();
 
