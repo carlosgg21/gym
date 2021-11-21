@@ -68,7 +68,8 @@
                     <th>FECHA DE ALTA</th>
                     <th>SOCIO</th>
                     <th>TIPO DE PAGO</th>
-                    <th>MONTO A PAGAR</th>
+                    {{-- <th>MONTO A PAGAR</th> --}}
+                    <th>FECHA PRÓXIMO PAGO</th>
                     {{-- <th>ACCIONES</th> --}}
                     {{-- <th>ACCIONES</th> --}}
                 </tr>
@@ -87,8 +88,18 @@
                         <td> {{ $customer->email }}</td>
                         <td> {{ $customer->hiring_date }}</td>
                         <td> {!! $customer->member == 'si' ? '<span class="badge badge-success">    <i class="fa fa-id-card-alt" aria-hidden="true"></i> </span>' : '<span class="badge badge-dark">NO</span>' !!}</td>
-                        <td> {{ $customer->paymentType->name }}</td>
-                        <td> {{ number_format($customer->paymentType->mount , 2, '.', ',');}} CUP</td>
+                        <td title="{{ number_format($customer->paymentType->mount , 2, '.', ',');}} CUP"> {{ $customer->paymentType->name }}</td>
+                        {{-- <td> {{ number_format($customer->paymentType->mount , 2, '.', ',');}} CUP</td> --}}
+                        @if ($customer->soon_expiration == 1)
+                            <td style="color: red" title="Vencimiento menor o igual a 3 días">
+                                <i class="fa fa-bell"></i> {{ $customer->due_day }}
+                            </td>
+                            @else
+                            <td style="color: green" title="Tiene tiempo para pagar">
+                                <i class="fa fa-bell-slash"></i> {{ $customer->due_day }}
+
+                            </td>
+                        @endif
 
                         {{-- <td> {{ $customer->member }}fa-credit-card
                     {{ $customer->member == "si" ? '<span class="badge badge-success">Success</span>' : '<span class="badge badge-dark">Success</span>' }}

@@ -19,9 +19,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        // $customers = Customer::with(['township','business','paymentType'])->where('enabled',1)->paginate(5);
-        $customers = Customer::with(['business', 'paymentType'])->where('enabled', 1)->paginate(5);
-        //return  $customers;
+
+        $customers = Customer::getCustomers();
+        // return  $customers;
         return view('customer.index', compact('customers'));
     }
 
