@@ -268,6 +268,12 @@ return [
             // 'icon'        => 'fa fa-list-alt',
         ],
         // [
+        //     'text' => 'Clientes de Baja',
+        //     'route'  => 'customers.show_unsubscribe',
+        //     'icon' => 'fa fa-tasks',
+
+        // ],
+        // [
         //     'text'        => 'Grupos de clientes',
         //     'route'         => 'group-customers.index',
 
@@ -285,18 +291,24 @@ return [
         //     'url'  => 'admin/settings',
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
+        // [
+        //     'text' => 'Clientes de baja',
+        //     'route'  => 'customers.show_unsubscribe',
+        //     'icon' => 'fa fa-tasks',
+        //      'topnav' => true,
+        // ],
 
-        [
-            'text'    => 'Clasificadores',
-            'icon'    => 'fas fa-fw fa-tools',
-            'topnav' => true,
-            'submenu' => [
+        // [
+        //     'text'    => 'Herramientas',
+        //     'icon'    => 'fas fa-fw fa-tools',
+        //     'topnav' => true,
+        //     'submenu' => [
 
-                [
-                    'text' => 'Clientes de baja',
-                    'route'  => 'employees.index',
-                    'icon' => 'fa fa-user-minus',
-                ],
+        //         [
+        //             'text' => 'Clientes de baja',
+        //             'route'  => 'customers.show_unsubscribe',
+        //             'icon' => 'fa fa-user-minus',
+        //         ],
                 // [
                 //     'text' => 'Tipos Contratos',
                 //     'route'  => 'employees.index',
@@ -308,8 +320,8 @@ return [
 
 
 
-            ],
-        ],
+            // ],
+        // ],
         ['header' => 'DEL NEGOCIO'],
 
         [

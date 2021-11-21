@@ -43,10 +43,19 @@
                             class="fa fa-credit-card"></i> Registrar pago</a> --}}
                     <a id="btnMember" href="#" class="btn btn-success btn-sm " aria-disabled="true"><i
                             class="fa fa-id-card-alt"></i> Hacer socio</a>
-                    <a  href="{{ route('customers.show_unsubscribe') }}" class="btn btn-warning btn-sm " aria-disabled="true"><i
-                            class="fa fa-tasks"></i> Clientes de baja</a>
+                </div>
+                <div class="col-3">
+                    <div class="float-right">
+
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+      <label class="form-check-label" for="defaultCheck1">
+        Mostrar todos
+    </label>
+                    </div>
+
                 </div>
                 <div class="col-4">
+
                     <input type="search" class="form-control form-control-sm" onkeyup="myFunction()" id="inputSearch"
                         placeholder="Buscar por nombres...">
                 </div>
@@ -67,6 +76,7 @@
                     <th>CORREO ELECTRÓNICO</th>
                     <th>FECHA DE ALTA</th>
                     <th>SOCIO</th>
+                    <th>ESTADO</th>
                     <th>TIPO DE PAGO</th>
                     <th>MONTO A PAGAR</th>
                     {{-- <th>ACCIONES</th> --}}
@@ -87,6 +97,7 @@
                         <td> {{ $customer->email }}</td>
                         <td> {{ $customer->hiring_date }}</td>
                         <td> {!! $customer->member == 'si' ? '<span class="badge badge-success">    <i class="fa fa-id-card-alt" aria-hidden="true"></i> </span>' : '<span class="badge badge-dark">NO</span>' !!}</td>
+                        <td> {!! $customer->enabled == '1' ? '<span class="badge badge-pill badge-info">Activo</span>' : '<span class="badge badge-pill badge-danger">Baja</span>' !!}</td>
                         <td> {{ $customer->paymentType->name }}</td>
                         <td> {{ number_format($customer->paymentType->mount , 2, '.', ',');}} CUP</td>
 

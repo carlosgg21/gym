@@ -5,11 +5,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <ol class="breadcrumb ">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}" class="link-orange"> <i
-                                class="fa fa-home"></i> Inicio</a></li>
-                    <li class="breadcrumb-item active">Listado de Clientes del Negocio</li>
-                </ol>
+                <ol class="breadcrumb float-sm-left">
+                    {{-- <li class="breadcrumb-item"><a href="{{ route('home') }}"> <i class="fa fa-home" ></i> Inicio</a></li> --}}
+                    <li class="breadcrumb-item"><a class="link-orange" href="{{ route('customers.index') }}"> <i class="fa fa-user" aria-hidden="true"></i>  Listado de Clientes</a></li>
+                    <li class="breadcrumb-item active">Listado Cliente de Baja</li>
+
+
+                  </ol>
             </div>
             {{-- <div class="col-sm-6">
         <a href="{{ route('customers.create') }}"  class="btn btn-default btn-sm float-sm-right"  aria-disabled="true"><i class="fa fa-plus-square" ></i> Nuevo</a>
@@ -36,15 +38,17 @@
         <div class="card-body">
             <div class="row">
                 <div class="col">
-                    <a href="{{ route('customers.create') }}"  class="btn btn-default btn-sm"  aria-disabled="true"><i class="fa fa-plus-square" ></i> Nuevo</a>
-                    <a id="btnRemove" href="#" class="btn btn-danger btn-sm " aria-disabled="true"><i
-                            class="fa fa-trash-alt"></i> Dar baja </a>
+                    {{-- <a href="{{ route('customers.create') }}"  class="btn btn-default btn-sm"  aria-disabled="true"><i class="fa fa-plus-square" ></i> Nuevo</a> --}}
+                    <a id="btnBacktoList" href="#" class="btn btn-success btn-sm " aria-disabled="true"><i
+                            class="fa fa-user-plus"></i> Dar alta </a>
                     {{-- <a id="btnPayment" href="#" class="btn btn-primary btn-sm " aria-disabled="true"><i
                             class="fa fa-credit-card"></i> Registrar pago</a> --}}
-                    <a id="btnMember" href="#" class="btn btn-success btn-sm " aria-disabled="true"><i
-                            class="fa fa-id-card-alt"></i> Hacer socio</a>
-                    <a  href="{{ route('customers.show_unsubscribe') }}" class="btn btn-warning btn-sm " aria-disabled="true"><i
-                            class="fa fa-tasks"></i> Clientes de baja</a>
+                    {{-- <a id="btnMember" href="#" class="btn btn-success btn-sm " aria-disabled="true"><i
+                            class="fa fa-id-card-alt"></i> Hacer socio</a> --}}
+                </div>
+                <div class="col-4">
+                    <input type="search" class="form-control form-control-sm" onkeyup="myFunctionI()" id="inputSearchI"
+                        placeholder="Buscar por identificación...">
                 </div>
                 <div class="col-4">
                     <input type="search" class="form-control form-control-sm" onkeyup="myFunction()" id="inputSearch"
@@ -61,14 +65,15 @@
             <thead class="thead-orange">
                 <tr>
                     <th></th>
+                    <th>IDENTICACIÓN</th>
                     <th>NOMBRE</th>
                     <th>SEXO</th>
                     <th>TELÉFONO</th>
                     <th>CORREO ELECTRÓNICO</th>
-                    <th>FECHA DE ALTA</th>
+                    <th>FECHA DE BAJA</th>
                     <th>SOCIO</th>
-                    <th>TIPO DE PAGO</th>
-                    <th>MONTO A PAGAR</th>
+                    {{-- <th>TIPO DE PAGO</th>
+                    <th>MONTO A PAGAR</th> --}}
                     {{-- <th>ACCIONES</th> --}}
                     {{-- <th>ACCIONES</th> --}}
                 </tr>
@@ -80,15 +85,16 @@
                             <input type="checkbox" name="valor[]" id="{{ $customer->id }}" value="{{ $customer->id }}">
                         </td>
                         <td> {{ $customer->name . ' ' . $customer->last_name }}</td>
+                        <td> {{ $customer->ci }}</td>
                         <td>
                             <span class="badge badge-secondary">{{ $customer->sex }}</span>
                         </td>
                         <td> {{ $customer->cellphone }}</td>
                         <td> {{ $customer->email }}</td>
-                        <td> {{ $customer->hiring_date }}</td>
+                        <td> {{ $customer->discharge_date }}</td>
                         <td> {!! $customer->member == 'si' ? '<span class="badge badge-success">    <i class="fa fa-id-card-alt" aria-hidden="true"></i> </span>' : '<span class="badge badge-dark">NO</span>' !!}</td>
-                        <td> {{ $customer->paymentType->name }}</td>
-                        <td> {{ number_format($customer->paymentType->mount , 2, '.', ',');}} CUP</td>
+                        {{-- <td> {{ $customer->paymentType->name }}</td>
+                        <td> {{ number_format($customer->paymentType->mount , 2, '.', ',');}} CUP</td> --}}
 
                         {{-- <td> {{ $customer->member }}fa-credit-card
                     {{ $customer->member == "si" ? '<span class="badge badge-success">Success</span>' : '<span class="badge badge-dark">Success</span>' }}

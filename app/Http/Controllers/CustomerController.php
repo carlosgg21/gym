@@ -8,6 +8,7 @@ use App\Models\PaymentTypes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Http\Requests\StoreCustomerRequest;
+use Illuminate\Support\Carbon;
 
 class CustomerController extends Controller
 {
@@ -150,6 +151,7 @@ class CustomerController extends Controller
 
                 $customer =  Customer::find($id);
                 $customer->enabled = '0';
+                $customer->discharge_date =  Carbon::now()->toDateTimeString();
                 $customer->save();
             }
             session()->flash('success', 'Se han dado de baja a los clientes seleccionados');
@@ -189,6 +191,43 @@ class CustomerController extends Controller
             ]);
         } else {
             session()->flash('error', 'Error No se ha podido actualizar la fecha de pago de los clientes selecionados');
+            $data = collect([
+                'status' => "error"
+
+            ]);
+        }
+
+        return response()->json($data, 200);
+    }
+
+    public function show_unsubscribe(){
+        $customers = Customer::with(['business', 'paymentType'])->where('enabled', 0)->paginate(5);
+        return view('customer.show-unsubscribe',compact('customers'));
+    }
+
+    public function subscribe(Request $request)
+    {
+
+        if (count($request->valor) != 0) {
+
+            $cont =  count($request->valor);
+            $values =  $request->valor;
+
+            for ($i = 0; $i < $cont; $i++) {
+                $id = $values[$i];
+
+                $customer =  Customer::find($id);
+                $customer->enabled = '1';
+                $customer->discharge_date = null;
+                $customer->hiring_date =  Carbon::now()->toDateTimeString();
+                $customer->save();
+            }
+            session()->flash('success', 'Se han dado de alta a los clientes seleccionados');
+            $data = collect([
+                'status' => "success"
+            ]);
+        } else {
+            session()->flash('error', 'Error No se ha podido dar de alta a los clientes selecionados');
             $data = collect([
                 'status' => "error"
 

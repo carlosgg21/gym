@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Customer;
+use App\Models\Employee;
+use App\Models\Group;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $data = array(
+                'customers' => Customer::whereEnabled('1')->count(),
+                'employees' => Employee::whereEnabled('1')->count(),
+                'groups'    => Group::whereEnabled('1')->count()
+        );
+
+        return view('home',compact('data'));
     }
 }

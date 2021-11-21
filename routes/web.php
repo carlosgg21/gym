@@ -39,6 +39,8 @@ Route::resource('employees', EmployeeController::class);
 Route::resource('payment-types', PaymentTypesController::class);
 Route::get('customers/member', [CustomerController::class,'member'])->name('customers.member');
 Route::get('customers/unsubscribe', [CustomerController::class,'unsubscribe'])->name('customers.unsubscribe');
+Route::get('customers/show_unsubscribe', [CustomerController::class,'show_unsubscribe'])->name('customers.show_unsubscribe');
+Route::get('customers/subscribe', [CustomerController::class,'subscribe'])->name('customers.subscribe');
 Route::resource('customers', CustomerController::class);
 Route::get('towns/{id}', [TownshipController::class, 'getTownByProvince']);
 Route::get('mount/{id}', [PaymentTypesController::class, 'getMount'])->name('payment-types.mount');
