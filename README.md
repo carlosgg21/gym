@@ -1,4 +1,4 @@
-# Sistemas de Gestión de Gimnacio
+# Sistemas de Gestión de Gimnasios
 
 Una plataforma para los propietarios de gimnasios y estudios de fitness que desean ahorrar tiempo y gestionar su base de clientes. Permiten tener el control de tu negocio, por lo que no tienes que preocuparte por las cosas pequeñas: desde la programación y la gestión de miembros hasta los pagos y la generación de informes
 
